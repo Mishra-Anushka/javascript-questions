@@ -1,0 +1,178 @@
+1.  what is the difference betweeen scripting and programming language?
+Basically, all scripting languages are programming languages. The theoretical difference between the two is that scripting languages do not require the compilation step
+and are rather interpreted
+
+we can design an interpreter for C language and use it as a scripting language, and at the same time, we can design a compiler for JavaScript and use it as a 
+non-scripting(compiled language). A live example of this is V8, the JavaScript engine of Google Chrome, which compiles the JavaScript code into machine code,
+rather than interpreting it.
+
+2. what is the difference between programming lang and scripting lang?
+Programming languages are the languages that need a compiler for convert their code into native machine code. Programming languages run faster compare then scripting languages.
+Scripting languages don’t require to be compiled rather they are interpreted.
+
+while classifying a language as scripting language or programming language, the environment on which it would execute must be taken into consideration. The reason why
+this is important is that we can design an interpreter for C language and use it as a scripting language, and at the same time, we can design a compiler for JavaScript
+and use it as a non-scripting(compiled language). A live example of this is V8, the JavaScript engine of Google Chrome, which compiles the JavaScript code into machine code,
+rather than interpreting it.
+ex of programming lang = c,c++,java 
+ex pf scripting lang = js,perl,python,php
+
+3. advantages and disadvantages of js?
+less server interactions, increased interactivity, immediate feedback to the visitors
+dis = No support for multithreading, reading and writing files is not allowed
+
+4. what is name function?
+A named function declares a name as soon as it is defined
+
+5.what is closure?
+It gives you access to an outer function’s scope from an inner function
+Closures are created whenever a variable that is defined outside the current scope is accessed from within some inner scope.
+
+6. difference between attributes and properties?
+HTML representation of a DOM element has attributes and when represented as a JavaScript object those attributes appear as object properties.
+
+7. difference between innertext and innerhtml?
+The innerHTML property sets or returns the HTML content (inner HTML) of an element.
+The innerText property sets or returns the text content of the specified node, and all its descendants.
+
+8. who developed javascript?
+Brendan Eich, a Netscape Communications Corporation programmer, created JavaScript in September 1995 in US
+
+9. what is the difference between javascript and jscript?
+Netscape provided the JavaScript language. Microsoft changed the name and called it JScript to avoid the trademark issue. In other words, you can say JScript is the same 
+as JavaScript,but microsoft provided it and supports IE browser only
+
+10. what is BOM?
+BOM stands for Browser Object Model. It provides interaction with the browser. The default object of a browser is a window. So, you can call all the functions of the window
+by specifying the window or directly. The window object provides various properties like document, history, screen, navigator, location, innerHeight, innerWidth
+
+11. How to write HTML code dynamically using JavaScript?
+The innerHTML property is used to write the HTML code using JavaScript dynamically. Let's see a simple example:
+
+document.getElementById('mylocation').innerHTML="<h2>This is heading using JavaScript</h2>";
+
+12. How to set the cursor to wait in JavaScript?
+The cursor can be set to wait in JavaScript by using the property "cursor". The following example illustrates the usage:
+
+<script>  
+window.document.body.style.cursor = "wait";   
+</script>  
+
+13. What is the difference between View state and Session state?
+"View state" is specific to a page in a session whereas "Session state" is specific to a user or browser that can be accessed across all pages in the web application.   
+
+14. How to validate a form in JavaScript?
+<script>  
+function validateform(){  
+var name=document.myform.name.value;  
+var password=document.myform.password.value;  
+  
+if (name==null || name==""){  
+  alert("Name can't be blank");  
+  return false;  
+}else if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }  
+}  
+</script>  
+<body>  
+<form name="myform" method="post" action="abc.jsp" onsubmit="return validateform()" >  
+Name: <input type="text" name="name"><br/>  
+Password: <input type="password" name="password"><br/>  
+<input type="submit" value="register">  
+</form>  
+
+
+
+more questions
+1. what is js,JIT compiler, characterstics
+2. if single threaded then how asynchronuous
+3. types of dialog box
+4. ways to create object
+5.prototype
+6.arrow function
+7.rest operator/3 dots
+8 arguments keyword
+9 high order functions and calback
+10. binding of this keyword
+11. iterables,iterators,array like objects
+- methods of array
+12 shallow and deep copy of array                                                   
+13, splice(),slice(),forEach(), map()
+14.spread operator /3 dots
+15. way to copy the array of object?
+16. what are array,sets and maps
+17. wht is the differnce between array and sets
+18. what is the difference between maps and object
+19. weaksets and weakmap
+20. object.assign()
+21. spread operator v/s object.assign
+22. object destructuring
+23. this in arrow function
+24.coercion, hoisting
+25. prototype
+26. bubbling and capturing?
+27. event delegation?
+28.factory function
+29. closure
+30. promise and its methods
+31. async await
+32. types of storage and methods
+33. Symbol
+34. Generators and its syntax
+
+
+-- convert in 1 d array
+// var a =[1,2,3,[4,5,6],[7,8,[9,10,11],12],[13,14,15]]
+// var b = (a.flat())
+// console.log(b.flat())
+or
+var result =[]
+function getArray(d)
+{ 
+    for( const item of d)
+    {
+        if(!Array.isArray(item))
+        {
+        result.push(item)
+        }
+        else
+        {
+          getArray(item)
+        }
+    }
+    return result
+    
+}
+
+var arr = [1,2,3,[4,5,6],[7,8,[9,10,11],12],[13,14,15]]
+var some = getArray(arr)
+console.log(some)
+
+
+--A micro-frontend is a development approach where a web application's front end is divided into smaller, self-contained modules.
+--performance optimizatio tool - lighthouse
+it is a chrome extension and when travelled through url/route then on that particluar page open the lighthouse and run the scan then it gives overall factors that need to be covered to increase the performance
+
+--React 18
+
+server side rendering
+useId,useTransition,useDefferedValue
+
+--ecma 14 (2023)
+toSorted,toSpliced -- new array
+
+-- 'use strict';
+let a = 'a';
+function foo() {
+ let b = 'b';
+ console.log(b); // 'b' gets logged
+ console.log(a); // 'a' gets logged
+ randomNumber = 33;
+ console.log(randomNumber);  // if 'use strict' is not used then engine create a varible and assign the value else gives error
+ of not defined
+}
+foo();
+
+----- ES2023 added the Array toSpliced() method as a safe way to splice an array without altering the original array -- difference between splice and tospliced is splice affects the original array while toSpliced gives a new array
